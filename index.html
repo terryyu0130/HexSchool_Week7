@@ -1,10 +1,34 @@
----
-title: 首頁
-layout: ./app/layout.ejs
-engine: ejs
-current: index
----
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>首頁</title>
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Fontawsome -->
+  <!-- Font-awsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  </link>
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body>
+  <!-- header -->
+  <div class="header">
+    <i class="far fa-arrow-alt-circle-right fa-3x md-arrow"></i>
+    <h1 class="logo"><a href="#">Logo</a></h1>
+    <ul class="menu">
+      <li><a href="#">Product</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  
 <!-- banner -->
 <div class="banner">
   <div class="content">
@@ -106,3 +130,21 @@ current: index
     </ul>
   </div>
 </div>
+
+  <!-- footer -->
+  <div class="container">
+    <div class="footer">
+      <h1 class="logo"><a href="#">Logo</a></h1>
+      <p class="copyright">&copy;2020 Fixie. All Rights Reserved.</p>
+      <ul class="menu">
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+</body>
+
+</html>

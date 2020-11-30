@@ -1,0 +1,754 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  overflow-x: hidden; }
+
+a {
+  text-decoration: none; }
+
+.container {
+  max-width: 1410px;
+  margin: 0 auto; }
+
+.header,
+.footer {
+  padding: 0 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-bottom: 1px solid #121212;
+  position: relative; }
+  @media (max-width: 414px) {
+    .header,
+    .footer {
+      padding: 0;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+  .header .logo,
+  .footer .logo {
+    width: 112px;
+    height: 48px;
+    background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/logo-fixie.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; }
+    @media (max-width: 414px) {
+      .header .logo,
+      .footer .logo {
+        margin: 16px auto; } }
+    .header .logo a,
+    .footer .logo a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      text-indent: 101%;
+      overflow: hidden;
+      white-space: nowrap; }
+  .header .menu,
+  .footer .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media (max-width: 414px) {
+      .header .menu,
+      .footer .menu {
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 81px;
+        left: 0;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+                transform: translateX(-100%);
+        z-index: 5; }
+        .header .menu.active,
+        .footer .menu.active {
+          -webkit-transform: translateX(0%);
+              -ms-transform: translateX(0%);
+                  transform: translateX(0%); } }
+    @media (max-width: 414px) {
+      .header .menu li,
+      .footer .menu li {
+        background-color: #f1f5f6;
+        text-align: center;
+        border-bottom: 1px solid #121212; } }
+    .header .menu li + li,
+    .footer .menu li + li {
+      margin-left: 48px; }
+      @media (max-width: 414px) {
+        .header .menu li + li,
+        .footer .menu li + li {
+          margin-left: 0; } }
+    .header .menu a,
+    .footer .menu a {
+      display: block;
+      color: #000000de;
+      padding: 32px 0;
+      font: normal normal bold 24px/24px Lato;
+      position: relative; }
+      @media (max-width: 414px) {
+        .header .menu a,
+        .footer .menu a {
+          padding: 16px 0; } }
+      .header .menu a::after,
+      .footer .menu a::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: #121212;
+        position: absolute;
+        left: 0;
+        bottom: 24px;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s; }
+      .header .menu a:hover::after,
+      .footer .menu a:hover::after {
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1); }
+  .header .md-arrow,
+  .footer .md-arrow {
+    display: none; }
+    @media (max-width: 414px) {
+      .header .md-arrow,
+      .footer .md-arrow {
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
+        -webkit-transition: 0.8s;
+        -o-transition: 0.8s;
+        transition: 0.8s; }
+        .header .md-arrow.active,
+        .footer .md-arrow.active {
+          -webkit-transform: scale(-1);
+              -ms-transform: scale(-1);
+                  transform: scale(-1); } }
+
+.footer {
+  border-bottom: none;
+  background-color: #f1f5f6; }
+  .footer .copyright {
+    color: #00000099;
+    font: normal normal normal 14px/21px Roboto;
+    -webkit-transform: translateX(-100px);
+        -ms-transform: translateX(-100px);
+            transform: translateX(-100px); }
+    @media (max-width: 1024px) {
+      .footer .copyright {
+        -webkit-transform: translateX(0px);
+            -ms-transform: translateX(0px);
+                transform: translateX(0px);
+        padding: 24px 0; } }
+  .footer .menu {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1; }
+    @media (max-width: 1024px) {
+      .footer .menu {
+        display: none; } }
+  .footer .logo {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; }
+    @media (max-width: 414px) {
+      .footer .logo {
+        display: none; } }
+
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .banner .content {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative; }
+    @media (max-width: 414px) {
+      .banner .content {
+        width: 100%; } }
+  .banner .text-group {
+    width: 60%; }
+    @media (max-width: 1024px) {
+      .banner .text-group {
+        width: 90%; } }
+    @media (max-width: 414px) {
+      .banner .text-group {
+        position: absolute;
+        top: 10px; } }
+    .banner .text-group .title {
+      color: #121212;
+      font: italic normal 900 96px/128px Merriweather; }
+      @media (max-width: 1024px) {
+        .banner .text-group .title {
+          font: italic normal 900 48px/64px Merriweather; } }
+      @media (max-width: 414px) {
+        .banner .text-group .title {
+          color: #fff;
+          font: italic normal 900 24px/36px Merriweather; } }
+    .banner .text-group .text {
+      color: #00000099;
+      font: normal normal normal 24px/36px Lato;
+      padding: 48px 0; }
+      @media (max-width: 1024px) {
+        .banner .text-group .text {
+          font: normal normal normal 16px/24px Lato;
+          padding: 24px 0; } }
+      @media (max-width: 414px) {
+        .banner .text-group .text {
+          display: none; } }
+    .banner .text-group .submit {
+      width: 40%;
+      display: block;
+      color: #121212;
+      padding: 16px 0;
+      font: normal normal bold 24px/24px Lato;
+      background-color: #f1f5f6;
+      border: 1px solid #000;
+      text-align: center; }
+      @media (max-width: 1024px) {
+        .banner .text-group .submit {
+          font: normal normal normal 16px/16px Lato;
+          padding: 16px; } }
+      @media (max-width: 414px) {
+        .banner .text-group .submit {
+          width: 30%;
+          padding: 8px;
+          margin-top: 10px; } }
+  .banner .pic {
+    width: 50%;
+    height: 864px;
+    background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img1.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat; }
+    @media (max-width: 1024px) {
+      .banner .pic {
+        height: 480px; } }
+    @media (max-width: 414px) {
+      .banner .pic {
+        width: 100%;
+        height: 320px; } }
+
+.pagination-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .pagination-group .pagination {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #121212; }
+    @media (max-width: 414px) {
+      .pagination-group .pagination {
+        width: 100%; } }
+    .pagination-group .pagination .arrow {
+      width: 12%;
+      padding: 36px;
+      border: 1px solid #121212;
+      margin: -1px -1px -1px 0; }
+      @media (max-width: 1024px) {
+        .pagination-group .pagination .arrow {
+          width: 16%;
+          padding: 24px; } }
+      @media (max-width: 414px) {
+        .pagination-group .pagination .arrow {
+          width: 20%;
+          padding: 16px; } }
+    .pagination-group .pagination a {
+      color: #121212;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .pagination-group .pagination .fas {
+      font-size: 24px; }
+    .pagination-group .pagination .subtitle {
+      color: #121212;
+      font: italic normal 900 48px/48px Merriweather;
+      margin-left: 48px; }
+      @media (max-width: 1024px) {
+        .pagination-group .pagination .subtitle {
+          font: italic normal 900 24px/24px Merriweather;
+          margin-left: 24px; } }
+      @media (max-width: 414px) {
+        .pagination-group .pagination .subtitle {
+          margin-left: 16px; } }
+  @media (max-width: 414px) {
+    .pagination-group .buckup {
+      display: none; } }
+
+.product-intro .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative; }
+
+.product-intro .pic {
+  width: 50%;
+  height: 960px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  @media (max-width: 1024px) {
+    .product-intro .pic {
+      height: 480px; } }
+  @media (max-width: 414px) {
+    .product-intro .pic {
+      width: 100%;
+      height: 360px; } }
+
+.product-intro .pic-one {
+  background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img2.jpg"); }
+
+.product-intro .pic-two {
+  background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img3.jpg"); }
+
+.product-intro .content {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f1f5f6; }
+
+.product-intro .text-group {
+  width: 70%;
+  height: 100%;
+  padding: 96px 0 192px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  @media (max-width: 1024px) {
+    .product-intro .text-group {
+      width: 90%;
+      padding: 48px 0 96px 0; } }
+  @media (max-width: 414px) {
+    .product-intro .text-group {
+      width: 100%;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+
+.product-intro .text {
+  width: 80%;
+  color: #00000099;
+  font: normal normal normal 16px/24px Lato; }
+  @media (max-width: 1024px) {
+    .product-intro .text {
+      width: 90%; } }
+  @media (max-width: 414px) {
+    .product-intro .text {
+      display: none; } }
+
+.product-intro .title {
+  color: #121212;
+  font: italic normal 900 72px/72px Merriweather;
+  text-align: right; }
+  @media (max-width: 1024px) {
+    .product-intro .title {
+      font: italic normal 900 36px/36px Merriweather; } }
+  @media (max-width: 414px) {
+    .product-intro .title {
+      color: #f1f5f6;
+      font: italic normal 900 24px/32px Merriweather;
+      text-align: center; } }
+
+.product-intro .text-align-left {
+  text-align: left; }
+  @media (max-width: 414px) {
+    .product-intro .text-align-left {
+      text-align: center; } }
+
+.product-intro .order {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1; }
+  @media (max-width: 414px) {
+    .product-intro .order {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1; } }
+
+.product-intro .padding-reverse {
+  padding: 192px 0 96px 0; }
+  @media (max-width: 1024px) {
+    .product-intro .padding-reverse {
+      padding: 96px 0 48px 0; } }
+  @media (max-width: 414px) {
+    .product-intro .padding-reverse {
+      padding: 0; } }
+
+.product-intro .align-self-end {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
+
+.product-intro .block {
+  display: block;
+  margin-top: 24px; }
+  @media (max-width: 1024px) {
+    .product-intro .block {
+      margin-top: 16px; } }
+  @media (max-width: 414px) {
+    .product-intro .block {
+      display: inline-block; } }
+
+@media (max-width: 414px) {
+  .product-intro .mt-sm {
+    margin-top: 16px; } }
+
+.product-intro .readMore {
+  width: 12%;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: translateX(-20%);
+      -ms-transform: translateX(-20%);
+          transform: translateX(-20%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  @media (max-width: 1024px) {
+    .product-intro .readMore {
+      height: 40px;
+      width: 24%; } }
+  @media (max-width: 414px) {
+    .product-intro .readMore {
+      width: 36%;
+      -webkit-transform: translate(0, 150%);
+          -ms-transform: translate(0, 150%);
+              transform: translate(0, 150%); } }
+  .product-intro .readMore .text {
+    width: 70%;
+    padding: 16px 0 16px 0;
+    text-align: center;
+    color: #121212;
+    font: normal normal bold 24px/24px Lato; }
+    @media (max-width: 1024px) {
+      .product-intro .readMore .text {
+        font: normal normal bold 16px/16px Lato;
+        padding: 15px 0; } }
+    @media (max-width: 414px) {
+      .product-intro .readMore .text {
+        display: block;
+        font: normal normal bold 14px/14px Lato; } }
+  .product-intro .readMore .fas {
+    width: 30%;
+    padding: 16px 0;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #121212; }
+    @media (max-width: 1024px) {
+      .product-intro .readMore .fas {
+        font-size: 20px;
+        padding: 14px 0; } }
+    @media (max-width: 414px) {
+      .product-intro .readMore .fas {
+        font-size: 16px; } }
+  .product-intro .readMore .bg-secondary {
+    background-color: #f1f5f6; }
+    @media (max-width: 414px) {
+      .product-intro .readMore .bg-secondary {
+        background-color: #f1f5f6; } }
+  .product-intro .readMore .bg-black {
+    background-color: #121212; }
+    @media (max-width: 414px) {
+      .product-intro .readMore .bg-black {
+        background-color: #f1f5f6; } }
+  .product-intro .readMore .text-light {
+    color: #fff; }
+    @media (max-width: 414px) {
+      .product-intro .readMore .text-light {
+        background-color: #aaa; } }
+  .product-intro .readMore .text-black {
+    color: #121212; }
+
+.slogan {
+  text-align: center;
+  padding: 96px 0; }
+  @media (max-width: 1024px) {
+    .slogan {
+      padding: 24px 0; } }
+  @media (max-width: 414px) {
+    .slogan {
+      padding: 16px 0; } }
+  .slogan .title {
+    color: #121212;
+    font: italic normal 900 48px/64px Merriweather; }
+    @media (max-width: 1024px) {
+      .slogan .title {
+        font: italic normal 900 36px/48px Merriweather; } }
+    @media (max-width: 414px) {
+      .slogan .title {
+        font: italic normal 900 24px/36px Merriweather; } }
+  .slogan .text {
+    width: 30%;
+    margin: 0 auto;
+    color: #00000099;
+    font: normal normal normal 16px/24px Lato; }
+    @media (max-width: 1024px) {
+      .slogan .text {
+        width: 60%; } }
+    @media (max-width: 414px) {
+      .slogan .text {
+        display: none; } }
+  .slogan .block {
+    display: block; }
+
+.reference {
+  height: 640px;
+  background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img4.jpg");
+  background-position: center top 24%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+  @media (max-width: 1024px) {
+    .reference {
+      height: 480px; } }
+  @media (max-width: 414px) {
+    .reference {
+      height: 360px; } }
+  .reference .text {
+    width: 32%;
+    padding: 16px;
+    background-color: #fff;
+    color: #121212;
+    font: italic normal 900 24px/36px Merriweather;
+    -webkit-transform: translateY(250%);
+        -ms-transform: translateY(250%);
+            transform: translateY(250%); }
+    @media (max-width: 1024px) {
+      .reference .text {
+        width: 48%;
+        font: italic normal 900 16px/24px Merriweather;
+        -webkit-transform: translate(10%, 280%);
+            -ms-transform: translate(10%, 280%);
+                transform: translate(10%, 280%); } }
+    @media (max-width: 414px) {
+      .reference .text {
+        width: 80%;
+        margin: 0 auto;
+        font: italic normal 900 14px/20px Merriweather;
+        -webkit-transform: translate(0%, 250%);
+            -ms-transform: translate(0%, 250%);
+                transform: translate(0%, 250%); } }
+  .reference .name {
+    display: block;
+    margin-top: 16px;
+    color: #00000099;
+    font: normal normal normal 16px/24px Lato; }
+    @media (max-width: 1024px) {
+      .reference .name {
+        font: normal normal normal 16px/16px Lato; } }
+    @media (max-width: 414px) {
+      .reference .name {
+        margin-top: 8px;
+        font: normal normal normal 12px/14px Lato; } }
+
+.product-card .card-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 96px 0; }
+  @media (max-width: 1024px) {
+    .product-card .card-group {
+      padding: 48px 0; } }
+  @media (max-width: 414px) {
+    .product-card .card-group {
+      padding: 16px 0; } }
+
+.product-card .card {
+  width: 32%; }
+  @media (max-width: 414px) {
+    .product-card .card {
+      width: 100%;
+      padding: 0 16px; }
+      .product-card .card + .card {
+        margin-top: 16px; } }
+
+.product-card .pic {
+  height: 600px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  @media (max-width: 1024px) {
+    .product-card .pic {
+      height: 320px; } }
+  @media (max-width: 414px) {
+    .product-card .pic {
+      height: 240px; } }
+
+.product-card .pic-one {
+  background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img5.jpg"); }
+
+.product-card .pic-two {
+  background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img6.jpg"); }
+
+.product-card .pic-three {
+  background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img7.jpg"); }
+
+.product-card .title {
+  color: #121212;
+  font: italic normal 900 24px/31px Merriweather;
+  margin: 24px 0 16px; }
+  @media (max-width: 1024px) {
+    .product-card .title {
+      font: italic normal 900 24px/24px Merriweather;
+      margin: 16px 0; } }
+  @media (max-width: 414px) {
+    .product-card .title {
+      font: italic normal 900 20px/20px Merriweather;
+      margin: 8px 0;
+      padding: 0 16px; } }
+
+.product-card .subtitle {
+  color: #00000099;
+  font: normal normal normal 16px/24px Lato;
+  margin-bottom: 16px; }
+  @media (max-width: 1024px) {
+    .product-card .subtitle {
+      font: normal normal normal 16px/20px Lato;
+      margin-bottom: 8px; } }
+  @media (max-width: 414px) {
+    .product-card .subtitle {
+      font: normal normal normal 14px/16px Lato;
+      padding: 0 16px; } }
+
+.product-card .text {
+  font: normal normal normal 16px/24px Lato; }
+  @media (max-width: 1024px) {
+    .product-card .text {
+      font: normal normal normal 16px/20px Lato; } }
+  @media (max-width: 414px) {
+    .product-card .text {
+      display: none; } }
+
+/*# sourceMappingURL=all.css.map */
