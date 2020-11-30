@@ -1,0 +1,36 @@
+// slogan
+.slogan {
+    text-align: center;
+    padding: $X-large 0;
+    @include pad {
+        padding: $middle 0;
+    }
+    @include mobile {
+        padding: $small 0;
+    }
+    .title {
+        color: $color-primary;
+        font: italic normal 900 48px/64px Merriweather;
+        @include pad {
+            font: italic normal 900 36px/48px Merriweather;
+        }
+        @include mobile {
+            font: italic normal 900 24px/36px Merriweather;
+        }
+    }
+    .text {
+        width: 30%;
+        margin: 0 auto;
+        color: $color-secondary;
+        font: normal normal normal 16px/24px Lato;
+        @include pad {
+            width: 60%;
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+    .block {
+        display: block;
+    }
+}

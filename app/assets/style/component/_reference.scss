@@ -1,0 +1,47 @@
+//reference
+.reference {
+    height: 640px;
+    background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img4.jpg");
+    background-position: center top 24%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    @include pad {
+        height: 480px;
+    }
+    @include mobile {
+        height: 360px;
+    }
+    .text {
+        width: 32%;
+        padding: $small;
+        background-color: #fff;
+        color: $color-primary;
+        font: italic normal 900 24px/36px Merriweather;
+        transform: translateY(250%);
+        @include pad {
+            width: 48%;
+            font: italic normal 900 16px/24px Merriweather;
+            transform: translate(10%, 280%);
+        }
+        @include mobile {
+            width: 80%;
+            margin: 0 auto;
+            font: italic normal 900 14px/20px Merriweather;
+            transform: translate(0%, 250%);
+        }
+    }
+    .name {
+        display: block;
+        margin-top: $small;
+        color: $color-secondary;
+        font: normal normal normal 16px/24px Lato;
+        @include pad {
+            font: normal normal normal 16px/16px Lato;
+        }
+        @include mobile {
+            margin-top: 8px;
+            font: normal normal normal 12px/14px Lato;
+        }
+    }
+}

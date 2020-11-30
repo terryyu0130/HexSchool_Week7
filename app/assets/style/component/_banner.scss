@@ -1,0 +1,82 @@
+//banner
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+    .content {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        @include mobile {
+            width: 100%;
+        }
+    }
+    .text-group {
+        width: 60%;
+        @include pad {
+            width: 90%;
+        }
+        @include mobile {
+            position: absolute;
+            top: 10px;
+        }
+        .title {
+            color: $color-primary;
+            font: italic normal 900 96px/128px Merriweather;
+            @include pad {
+                font: italic normal 900 48px/64px Merriweather;
+            }
+            @include mobile {
+                color: #fff;
+                font: italic normal 900 24px/36px Merriweather;
+            }
+        }
+        .text {
+            color: $color-secondary;
+            font: normal normal normal 24px/36px Lato;
+            padding: $large 0;
+            @include pad {
+                font: normal normal normal 16px/24px Lato;
+                padding: $middle 0;
+            }
+            @include mobile {
+                display: none;
+            }
+        }
+        .submit {
+            width: 40%;
+            display: block;
+            color: $color-primary;
+            padding: $small 0;
+            font: normal normal bold 24px/24px Lato;
+            background-color: $color-muted;
+            border: 1px solid #000;
+            text-align: center;
+            @include pad {
+                font: normal normal normal 16px/16px Lato;
+                padding: $small;
+            }
+            @include mobile() {
+                width: 30%;
+                padding: 8px;
+                margin-top: 10px;
+            }
+        }
+    }
+    .pic {
+        width: 50%;
+        height: 864px;
+        background-image: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week7/img1.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include pad {
+            height: 480px;
+        }
+        @include mobile {
+            width: 100%;
+            height: 320px;
+        }
+    }
+}
